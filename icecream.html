@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEsGB93vUWLhgtt61Zv4EpE3AGPYLbmj2fxizf-mhnOy3c7cuZgNN9q__vuDFWlnq4Vrs&usqp=CAU'); /* https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEsGB93vUWLhgtt61Zv4EpE3AGPYLbmj2fxizf-mhnOy3c7cuZgNN9q__vuDFWlnq4Vrs&usqp=CAU */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(51, 206, 230, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(250, 250, 250, 0.897);
+            margin-top: 20px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #ff6f61;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: rgb(255, 250, 250);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #ff6f61;
+        }
+
+        .flavor-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .flavor-list li {
+            margin: 10px 0;
+        }
+
+        .flavor-button {
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .flavor-button:hover {
+            background-color: #e55b4e;
+        }
+
+        .cart {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #46838e;
+            border-radius: 5px;
+            background-color: rgb(147, 126, 68);
+        }
+
+        .location {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #f2eded;
+            border-radius: 5px;
+            background-color: rgb(192, 114, 123);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to the Ice Cream Shop!</h1>
+        <ul class="flavor-list">
+            <li>Vanilla <button class="flavor-button" onclick="addToCart('Vanilla')">Add to Cart</button></li>
+            <li>Chocolate <button class="flavor-button" onclick="addToCart('Chocolate')">Add to Cart</button></li>
+            <li>Strawberry <button class="flavor-button" onclick="addToCart('Strawberry')">Add to Cart</button></li>
+            <li>Mint <button class="flavor-button" onclick="addToCart('Mint')">Add to Cart</button></li>
+        </ul>
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="location">
+        <h2>Our Location</h2>
+        <p>123 Ice Cream Street,ukkadam,coimbatore </p>
+        <p>Open daily from 10am to 10pm</p>
+    </div>
+
+    <script>
+        function addToCart(flavor) {
+            const cartItems = document.getElementById('cart-items');
+            const newItem = document.createElement('li');
+            newItem.textContent = flavor;
+            cartItems.appendChild(newItem);
+        }
+    </script>
+</body>
+</html>
